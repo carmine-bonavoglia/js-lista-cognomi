@@ -4,15 +4,19 @@ inserirlo in un array con altri cognomi (ve li passo, son buono ;)): ‘Bianchi�
 stampa la lista ordinata alfabeticamente
 scrivi anche la posizione "umana" della lista in cui il nuovo utente si trova */
 
-var arrayCognomi = ['Bianchi', 'Rossi', 'Verdi', 'Gallo', 'Pierro', 'Scognamiglio'];
+var arrayCognomi = ['Bianchi', 'Rossi', 'Verdi', 'Gallo', 'Pierro'];
 
 //Stampiamo l'array contenente i cognomi
-console.log(arrayCognomi);
+for(var i = 0; i < arrayCognomi.length; i++){
+    document.getElementById('lista-cognomi').innerHTML += '<p>' + arrayCognomi[i] + '</p>';
+}
 
-//Chiediamo all'utente di inserire un nuovo cognome e lo trasformiamo in modo da avere la prima lettera in Maiuscolo e le altre in Minuscolo
-var cognomeInput = prompt('Inserisci un nuovo cognome');
+//Chiediamo all'utente di inserire un cognome
+var cognomeInput = prompt('Inserisci un cognome');
 
 cognomeInput = cognomeInput.charAt(0).toUpperCase() + cognomeInput.substr(1).toLowerCase();
+
+document.getElementById('cognome-utente').innerHTML += cognomeInput;
 
 //Aggiungiamo il cognome dell'utente al nostro array e lo ordiniamo in ordine alfabetico
 arrayCognomi.push(cognomeInput);
@@ -20,9 +24,21 @@ arrayCognomi.push(cognomeInput);
 arrayCognomi.sort();
 
 //Stampiamo il nuovo array ordinato alfabeticamente e la posizione del cognome inserito dall'utente all'interno dell'array ordinato
-console.log(arrayCognomi);
-
+for(var i = 0; i < arrayCognomi.length; i++){
+    document.getElementById('lista-aggiornata').innerHTML += '<p>' + arrayCognomi[i] + '</p>';
+}
 var posizione = arrayCognomi.indexOf(cognomeInput) + 1;
 
-console.log('La posizione del nostro cognome è: ' + posizione);
+document.getElementById('posizione-utente').innerHTML += posizione;
 
+
+//Creiamo un pulsante che aggiorni la pagina
+var pulsante = document.getElementById("aggiorna");
+
+pulsante.addEventListener('click',
+    function(){
+
+        document.location.reload()
+
+    }
+);

@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(80, 198, 241, 0.3);
+    font-family: 'Inconsolata', monospace;
+}
+
+.container{
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: blanchedalmond;
+    text-align: center;
+    line-height: 2;
+
+}
+
+input{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15pz 25px;
+}
+
+button{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    padding: 20px 25px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    margin-top: 50px;
+}
+
+button:hover{
+    transform: scale(1.1);
+    background-color: rgb(80, 198, 241, 0.3);
+    transition: all 1s;
+}
