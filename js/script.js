@@ -14,6 +14,11 @@ for(var i = 0; i < arrayCognomi.length; i++){
 //Chiediamo all'utente di inserire un cognome
 var cognomeInput = prompt('Inserisci un cognome');
 
+while(cognomeInput == ''){
+    alert('ERRORE: il campo non può essere vuoto');
+    cognomeInput = prompt('Inserisci un cognome');
+}
+
 cognomeInput = cognomeInput.charAt(0).toUpperCase() + cognomeInput.substr(1).toLowerCase();
 
 document.getElementById('cognome-utente').innerHTML += cognomeInput;
@@ -27,10 +32,10 @@ arrayCognomi.sort();
 for(var i = 0; i < arrayCognomi.length; i++){
     document.getElementById('lista-aggiornata').innerHTML += '<p>' + arrayCognomi[i] + '</p>';
 }
+
 var posizione = arrayCognomi.indexOf(cognomeInput) + 1;
 
 document.getElementById('posizione-utente').innerHTML += posizione;
-
 
 //Creiamo un pulsante che aggiorni la pagina
 var pulsante = document.getElementById("aggiorna");
